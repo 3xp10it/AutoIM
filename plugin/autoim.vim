@@ -7,4 +7,3 @@ endfunction
 function AutoWB()
     silent !issw com.baidu.inputmethod.BaiduIM.wubi > /dev/null 2>&1
 endfunction
-inoremap <s> : call AutoWB() <CR>
