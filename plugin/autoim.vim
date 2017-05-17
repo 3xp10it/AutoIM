@@ -9,9 +9,11 @@ autocmd InsertLeave * call AutoEN()
 autocmd InsertEnter * call AutoWB()
 function AutoEN()
     if exists("g:AutoIM_enim_id")
-        silent exec '!issw ' . g:AutoIM_enim_id . ' > /dev/null 2>&1'
+        "silent exec '!issw ' . g:AutoIM_enim_id . ' > /dev/null 2>&1'
+        system('issw ' . g:AutoIM_enim_id . ' > /dev/null 2>&1')
     else 
-        silent exec '!issw ' . 'com.apple.keylayout.ABC' . ' > /dev/null 2>&1'
+        "silent exec '!issw ' . 'com.apple.keylayout.ABC' . ' > /dev/null 2>&1'
+        system('issw ' . 'com.apple.keylayout.ABC' . ' > /dev/null 2>&1')
     endif
 endfunction
 
