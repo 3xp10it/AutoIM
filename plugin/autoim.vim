@@ -17,9 +17,11 @@ endfunction
 
 function AutoWB()
     if exists("g:AutoIM_zhim_id")
-        silent exec '!issw ' . g:AutoIM_zhim_id . ' > /dev/null 2>&1'
+        "silent exec '!issw ' . g:AutoIM_zhim_id . ' > /dev/null 2>&1'
+        system('issw ' . g:AutoIM_zhim_id . ' > /dev/null 2>&1')
     else
-        silent exec '!issw ' . 'com.baidu.inputmethod.BaiduIM.wubi' . ' > /dev/null 2>&1'
+        "silent exec '!issw ' . 'com.baidu.inputmethod.BaiduIM.wubi' . ' > /dev/null 2>&1'
+        system('issw ' . 'com.baidu.inputmethod.BaiduIM.wubi' . ' > /dev/null 2>&1')
     endif
 endfunction
 
