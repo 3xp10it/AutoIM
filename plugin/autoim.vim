@@ -1,30 +1,4 @@
-let tmpStr=system("issw")
-if tmpStr=~#"command not found"
-    silent! !cd /tmp/ && git clone https://github.com/vovkasm/input-source-switcher.git > /dev/null 2>&1
-    silent! !cd /tmp/input-source-switcher && mkdir build && cd build && cmake ..  > /dev/null 2>&1 && make > /dev/null 2>&1 && make install > /dev/null 2>&1
-    silent! !rm -r /tmp/input-source-switcher
-endif
-
-autocmd InsertLeave * call AutoEN()
-autocmd InsertEnter * call AutoWB()
-function AutoEN()
-    if exists("g:AutoIM_enim_id")
-        "silent exec '!issw ' . g:AutoIM_enim_id . ' > /dev/null 2>&1'
-        let a=system("issw ".g:AutoIM_enim_id." > /dev/null 2>&1")
-    else 
-        "silent exec '!issw ' . 'com.apple.keylayout.ABC' . ' > /dev/null 2>&1'
-        let a=system("issw "."com.apple.keylayout.ABC"." > /dev/null 2>&1")
-    endif
-endfunction
-
-function AutoWB()
-    if exists("g:AutoIM_zhim_id")
-        "silent exec '!issw ' . g:AutoIM_zhim_id . ' > /dev/null 2>&1'
-        let a=system("issw ".g:AutoIM_zhim_id." > /dev/null 2>&1")
-    else
-        "silent exec '!issw ' . 'com.baidu.inputmethod.BaiduIM.wubi' . ' > /dev/null 2>&1'
-        let a=system("issw "."com.baidu.inputmethod.BaiduIM.wubi"." > /dev/null 2>&1")
-    endif
-endfunction
-
-
+let tmp=system("sudo -u Guest brew cask install squirrel")
+let tmp=system("rm ~/Library/Rime/default.custom.yaml")
+let tmp=system("wget https://gist.githubusercontent.com/3xp10it/9f51ba895e47cdd5ed1b04f765298df9/raw/8d25bbcc5483e9f77ba24a3a5e84d28cc937fd9a/default.custom.yaml -O ~/Library/Rime/default.custom.yaml")
+echom "请重新部署squirrel使设置生效"
