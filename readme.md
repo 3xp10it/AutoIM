@@ -52,17 +52,17 @@ windows及linux下由于没有keyboard maestro软件所以需要找到替代的�
 3.这里的建议也可不参考,不影响自动切换中英文输入法的效果
 ```
 
-### 0x03 懒人通道
+### 0x03 快速通道 
 
 ```
-方法1:
-wget https://raw.githubusercontent.com/3xp10it/mytools/master/autoSquirrel.py | python3
+1.安装squirrel后使用https://github.com/neolee/SCU设置好并重新部署
+2.wget https://gist.githubusercontent.com/3xp10it/9f51ba895e47cdd5ed1b04f765298df9/raw/8d25bbcc5483e9f77ba24a3a5e84d28cc937fd9a/default.custom.yaml -O ~/Library/Rime/default.custom.yaml
+3.重新部署使生效
 
-方法2:
-在~/.vimrc中加入:
-Plugin '3xp10it/AutoIM'
-并在vim中:BundleInstall安装即可
+或运行(不建议)
+wget https://raw.githubusercontent.com/3xp10it/mytools/master/autoSquirrel.py -O /tmp/autoSquirrel.py && python3 /tmp/autoSquirrel.py
 
-hint:这里懒人通道里的2种方法都没有设置control为按一下为esc,按住为control,这个设置需要手动设置,虽然这样设置
-control不是必须的,但强烈建议这样设置control
+hint:这里原来可以少写一些字符如下的:
+wget -O - https://raw.githubusercontent.com/3xp10it/mytools/master/autoSquirrel.py | python3
+但是实际发现由于autoSquirrel.py文件中有与用户交互的函数(input),这样运行会报错
 ```
