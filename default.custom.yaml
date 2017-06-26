@@ -1,5 +1,39 @@
 patch:
   schema_list:
     - schema: wubi_pinyin
-  "ascii_composer/switch_key/Shift_L": commit_code
+  ascii_composer/switch_key/Shift_L: commit_code
   "key_binder/bindings/@before 0": {accept: Escape, toggle: ascii_mode, when: always}
+  punctuator/half_shape:
+    "，" : { commit: "," }
+    "。" : { commit: "." }
+    "《" : "<"
+    "》" : ">"
+    "、" : "/"
+    "？" : { commit: "?" }
+    "；" : { commit: ";" }
+    "：" : { commit: ":" }
+    "‘" : "'"
+    "“" : "\""
+    "、" : "\\"
+    "·" : "|"
+    "`" : "`"
+    "~" : "~"
+    "！" : { commit: "!" }
+    "@" : "@"
+    "#" : "#"
+    "%" : "%"
+    "￥" : "$"
+    "……" : "^"
+    "&" : "&"
+    "*" : "*"
+    "（" : "("
+    "）" : ")"
+    "-" : "-"
+    "——" : "_"
+    "+" : "+"
+    "=" : "="
+    "「" : "["
+    "」" : "]"
+    "『" : "{"
+    "』" : "}"
+
